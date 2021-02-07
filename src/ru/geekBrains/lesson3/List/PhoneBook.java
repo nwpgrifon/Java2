@@ -15,7 +15,7 @@ public class PhoneBook {
             hashMap.put(contact.getName(), list);
         } else {
             for (String s : hashMap.get(contact.getName())) {
-                if (s.equals(contact.getTel())) {
+                if (s == contact.getTel()) {
                     System.out.println("Такой номер для " + contact.getName() + " уже есть!");
                     return;
                 }

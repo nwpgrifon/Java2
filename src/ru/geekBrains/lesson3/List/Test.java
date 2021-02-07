@@ -12,6 +12,7 @@ public class Test {
         Contact c4 = new Contact("Joshua Bloch", "1237");
         Contact c5 = new Contact("Joshua Bloch", "1237");
 
+
         phoneBook.add(c1);
         phoneBook.add(c2);
         phoneBook.add(c3);
