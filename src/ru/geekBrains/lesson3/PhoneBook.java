@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class PhoneBook {
 
-    private static HashMap<String, String> hashMap = new HashMap();
+    private HashMap<String, String> hashMap = new HashMap();
 
     public void add(Contact contact) {
         if (!hashMap.containsKey(contact.getName())) {
