@@ -1,21 +1,26 @@
 package ru.geekBrains.lesson3;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class PhoneBook {
 
-    public static void add(HashMap hashMap, int tel, String name) {
-        if (hashMap.containsKey(tel)) {
-            System.out.println("Номер для " + name + " уже есть в телефеонной книге!");
-            return;
+    private static HashMap<String, String> hashMap = new HashMap();
+
+    public void add(Contact contact) {
+        if (!hashMap.containsKey(contact.getName())) {
+            hashMap.put(contact.getName(), contact.getTel());
+        } else {
+            if (hashMap.get(contact.getName()).contains(contact.getTel())) {
+                System.out.println("такой номер для " + contact.getName() + " уже есть!");
+            } else {
+                hashMap.replace(contact.getName(), hashMap.get(contact.getName()), hashMap.get(contact.getName()) + ", " + contact.getTel());
+            }
         }
-        hashMap.put(tel, name);
     }
 
-//    public static void getByName(HashMap hashMap, String name) {
-//        for (name: hashMap.values()) {
-//            System.out.println(name + hashMap.keySet());
-//        }
-//    }
+    public void getByName(String name) {
+        System.out.println(name + ",  " + hashMap.get(name));
+    }
+
 }
+

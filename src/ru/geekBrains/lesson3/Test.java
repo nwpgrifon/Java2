@@ -1,23 +1,24 @@
 package ru.geekBrains.lesson3;
 
-import java.util.HashMap;
 
 public class Test {
 
     public static void main(String[] args) {
         PhoneBook phoneBook = new PhoneBook();
-        HashMap<Integer, String> hashMap = new HashMap<>();
 
+        Contact c1 = new Contact("Joshua Bloch", "1234");
+        Contact c2 = new Contact("Cay Horstmann", "1235");
+        Contact c3 = new Contact("Herbert Schildt", "1236");
+        Contact c4 = new Contact("Joshua Bloch", "1237");
+        Contact c5 = new Contact("Joshua Bloch", "1237");
 
-//        phoneBook.add(hashMap, 11111111, "John Gage");
-//        phoneBook.add(hashMap, 11111112, "Patrick Naughton");
-//        phoneBook.add(hashMap, 11111113, "James Gosling");
-//        phoneBook.add(hashMap, 11111114, "Herbert Schildt");
-//        phoneBook.add(hashMap, 11111115, "Cay Horstmann");
-        phoneBook.add(hashMap, 11111115, "Joshua Bloch");
-        phoneBook.add(hashMap, 11111115, "Joshua Bloch");
+        phoneBook.add(c1);
+        phoneBook.add(c2);
+        phoneBook.add(c3);
+        phoneBook.add(c4);
+        phoneBook.add(c5);
 
-//        phoneBook.getByName(hashMap, "Joshua Bloch");
-        System.out.println(hashMap);
+        phoneBook.getByName("Joshua Bloch");
+
     }
 }
